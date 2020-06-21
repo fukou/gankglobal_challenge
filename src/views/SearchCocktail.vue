@@ -40,7 +40,7 @@
         />
       </div>
       <div v-else class="text-blue-500 text-2xl flex items-center">
-        <span class="mr-2">No recipes found</span>
+        <span class="mr-2">{{ $t("nofound") }}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

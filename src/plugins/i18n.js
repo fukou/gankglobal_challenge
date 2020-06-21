@@ -17,6 +17,9 @@ const messages = {
     loadingRecs: "No recommendation available",
     loadingReci: "No recipes available",
     result: "The results for",
+    ingridient: "Ingridients",
+    instruction: "Instructions",
+    nofound: "No recipes found",
   },
   de: {
     linkHome: "Zuhause",
@@ -31,6 +34,9 @@ const messages = {
     loadingRecs: "Keine Empfehlung verfügbar",
     loadingReci: "Keine Rezepte verfügbar",
     result: "Die Ergebnisse für",
+    ingridient: "Zutaten",
+    instruction: "Anleitung",
+    nofound: "Keine Rezepte gefunden",
   },
 };
 

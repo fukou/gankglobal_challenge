@@ -46,7 +46,7 @@
               >{{ drinks.strAlcoholic }}</span
             >
           </div>
-          <h2 class="font-bold text-xl mb-2 text-gray-800">Ingredients</h2>
+          <h2 class="font-bold text-xl mb-2 text-gray-800">{{ $t("ingridient") }}</h2>
           <ul class="mb-4">
             <li
               v-if="drinks.strIngredient1"
@@ -145,7 +145,7 @@
             <div class="text-gray-700 text-base">
               <p>{{ drinks.strIngredient1 }}</p>
           </div>-->
-          <h2 class="font-bold text-xl mb-2 text-gray-800">Instructions</h2>
+          <h2 class="font-bold text-xl mb-2 text-gray-800">{{ $t("instruction") }}</h2>
           <p class="text-gray-700 text-base mb-6">
             {{ drinks.strInstructions }}
           </p>
