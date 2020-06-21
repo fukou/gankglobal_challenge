@@ -160,12 +160,19 @@
 import axios from "axios";
 
 export default {
-  props: ["id"],
   data() {
     return {
       drinks: [],
+      titleDetail: "",
     };
   },
+  metaInfo() {
+    return {
+      title: this.titleDetail + " — Cocktailspedia",
+      // ...
+    };
+  },
+  props: ["id"],
   async mounted() {
     this.load();
   },
@@ -177,7 +184,8 @@ export default {
         )
         .then((res) => {
           this.drinks = res.data.drinks[0];
-          console.log(this.drinks);
+          this.titleDetail = res.data.drinks[0].strDrink;
+          console.log(this.titleDetail);
         })
         .catch((error) => {
           console.log(error);

@@ -71,6 +71,11 @@ export default {
       drinks: [],
     };
   },
+  metaInfo() {
+    return {
+      title: "Keywords for: " + this.id + " — Cocktailspedia",
+    };
+  },
   async mounted() {
     this.loadSearch();
   },
