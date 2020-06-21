@@ -15,7 +15,9 @@
       <button
         @click="readMore"
         class="mt-4 bg-blue-500 hover:bg-transparent text-white font-semibold hover:text-blue-700 py-2 px-4 border border-transparent hover:border-blue-500 rounded"
-      >Read more</button>
+      >
+        {{ $t("buttonMore") }}
+      </button>
     </div>
   </div>
 </template>
@@ -26,19 +28,19 @@ export default {
   props: {
     category: {
       type: String,
-      required: true
+      required: true,
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     date: String,
-    thumbnail: String
+    thumbnail: String,
   },
   methods: {
     readMore() {
       this.$emit("viewMore");
-    }
-  }
+    },
+  },
 };
 </script>

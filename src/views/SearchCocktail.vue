@@ -18,12 +18,12 @@
               d="M5.41 11H21a1 1 0 0 1 0 2H5.41l5.3 5.3a1 1 0 0 1-1.42 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.42 1.4L5.4 11z"
             />
           </svg>
-          Back to home
+          {{ $t("backHome") }}
         </router-link>
       </button>
 
       <h1 class="font-bold text-3xl mb-16">
-        The results for <span class="text-blue-500">"{{ id }}"</span>
+        {{ $t("result") }} <span class="text-blue-500">"{{ id }}"</span>
       </h1>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"

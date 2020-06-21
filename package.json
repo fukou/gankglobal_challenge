@@ -12,6 +12,8 @@
     "core-js": "^3.6.5",
     "tailwindcss": "^1.4.6",
     "vue": "^2.6.11",
+    "vue-flag-icon": "^1.0.6",
+    "vue-i18n": "^8.18.2",
     "vue-infinite-scroll": "^2.0.2",
     "vue-meta": "^2.4.0",
     "vue-router": "^3.2.0"
