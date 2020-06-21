@@ -1,7 +1,7 @@
 # gankglobal_challenge
 
 
-![Homepage](https://static.tumblr.com/5ojoydj/sLEqc92dk/homecocktail.png)
+![Homepage](https://static.tumblr.com/5ojoydj/TbOqc95wt/screenshot_13.png)
 ![Detail](https://static.tumblr.com/5ojoydj/s0nqc92dy/detailcocktail.png)
 ![Search](https://static.tumblr.com/5ojoydj/EbFqc92ed/searchcocktail.png)
 
