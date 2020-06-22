@@ -21,10 +21,7 @@
       </router-link>
     </button>
 
-    <div
-      v-if="drinks.length !== 0"
-      class="rounded overflow-hidden shadow-lg bg-white"
-    >
+    <div v-if="drinks.length !== 0" class="rounded overflow-hidden shadow-lg bg-white">
       <div class="lg:max-w-full lg:flex">
         <div
           class="h-48 lg:h-auto lg:w-64 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
@@ -35,108 +32,20 @@
           <div class="mb-4">
             <span
               class="inline-block my-2 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >{{ drinks.strCategory }}</span
-            >
+            >{{ drinks.strCategory }}</span>
             <span
               class="inline-block my-2 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >{{ drinks.strGlass }}</span
-            >
+            >{{ drinks.strGlass }}</span>
             <span
               class="inline-block my-2 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-              >{{ drinks.strAlcoholic }}</span
-            >
+            >{{ drinks.strAlcoholic }}</span>
           </div>
           <h2 class="font-bold text-xl mb-2 text-gray-800">{{ $t("ingridient") }}</h2>
           <ul class="mb-4">
-            <li
-              v-if="drinks.strIngredient1"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure1 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient1 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient2"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure2 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient2 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient3"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure3 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient3 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient4"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure4 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient4 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient5"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure5 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient5 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient6"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure6 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient6 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient7"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure7 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient7 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient8"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure8 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient8 }}</strong>
-            </li>
-            <li
-              v-if="drinks.strIngredient9"
-              class="flex items-center justify-between"
-            >
-              <span class="text-left">{{ drinks.strMeasure9 }}</span>
-              <div
-                class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"
-              ></div>
-              <strong>{{ drinks.strIngredient9 }}</strong>
+            <li class="flex items-center justify-between" v-for="(i, key) in ingredient" :key="key">
+              <!-- <span class="text-left">{{ i }}</span> -->
+              <!-- <div class="flex-auto border-dotted border-b-2 border-gray-600 mx-4"></div> -->
+              {{ i }}
             </li>
           </ul>
           <!-- <div class="text-gray-700 text-base">
@@ -146,9 +55,7 @@
               <p>{{ drinks.strIngredient1 }}</p>
           </div>-->
           <h2 class="font-bold text-xl mb-2 text-gray-800">{{ $t("instruction") }}</h2>
-          <p class="text-gray-700 text-base mb-6">
-            {{ drinks.strInstructions }}
-          </p>
+          <p class="text-gray-700 text-base mb-6">{{ drinks.strInstructions }}</p>
         </div>
       </div>
     </div>
@@ -163,12 +70,13 @@ export default {
   data() {
     return {
       drinks: [],
-      titleDetail: "",
+      ingredient: [],
+      titleDetail: ""
     };
   },
   metaInfo() {
     return {
-      title: this.titleDetail + " — Cocktailspedia",
+      title: this.titleDetail + " — Cocktailspedia"
       // ...
     };
   },
@@ -182,15 +90,27 @@ export default {
         .get(
           "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + this.id
         )
-        .then((res) => {
+        .then(res => {
           this.drinks = res.data.drinks[0];
           this.titleDetail = res.data.drinks[0].strDrink;
+          this.getIngredients();
           console.log(this.titleDetail);
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
     },
-  },
+    getIngredients() {
+      for (let i = 1; i < 15; i++) {
+        if (this.drinks["strIngredient" + i] || this.drinks["strMeasure" + i]) {
+          this.ingredient.push(
+            this.drinks["strMeasure" + i] +
+              "of " +
+              this.drinks["strIngredient" + i]
+          );
+        }
+      }
+    }
+  }
 };
 </script>
