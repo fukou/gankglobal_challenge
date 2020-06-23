@@ -27,3 +27,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Credits
+- [Tailwind](https://tailwindcss.com/)
+- API from [TheCocktailDB](https://www.thecocktaildb.com/)
+- [Vue I18n](https://kazupon.github.io/vue-i18n/)
